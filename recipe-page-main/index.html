@@ -28,12 +28,12 @@
         place-items: center;
         font-family: Arial, Helvetica, sans-serif;
         padding: 20px;
+        box-sizing: border-box;
       }
       .container {
         background: #fff;
         display: flex;
         flex-direction: column;
-        width: 40%;
         padding: 1rem;
         border-radius: 10px;
         padding: 20px;
@@ -60,36 +60,36 @@
         padding: 8px;
         text-align: left;
       }
-      .img1 {
-        width: 37rem;
+      .image-container {
         border-radius: 1rem;
-      }
-      .nutrition-table td {
-        color: brown;
-      }
-      h1 {
-        font-size: 32px;
-        color: black;
-      }
-      ul,
-      ol {
-        padding-left: 20px;
-      }
-      li {
-        font-size: 14px;
-        color: #666;
         margin-bottom: 5px;
+        overflow: hidden;
+        height: 400px;
+      }
+
+      .img1 {
+        width: inherit;
+        height: inherit;
+        object-fit: contain;
       }
 
       li::marker {
         color: brown;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .container {
+          width: 100%;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
       <header id="head">
-        <img class="img1" src="./assets/images/img.jpeg" alt="" />
+        <div class="image-container">
+          <img class="img1" src="./assets/images/img.jpeg" alt="" />
+        </div>
         <h1>Simple Omelette Recipe</h1>
       </header>
       <p>
